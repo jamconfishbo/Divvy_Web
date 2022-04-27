@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
@@ -8,7 +9,8 @@ def home():
 
 @app.route("/yum")
 def yumpage():
-    return "Hello, World yum yum!!!"
+    return render_template('yum.html', name = "Hello, World yum yum!!!")
+    
     
 if __name__ == "__main__":
     app.run(debug=True)
